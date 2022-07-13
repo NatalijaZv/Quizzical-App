@@ -64,3 +64,8 @@ h1{
 .choosenAnswer{
   background-color: #D6DBF5;
 }
+
+.isSelected{
+  background: #4D5B9E;
+  color:white
+}
