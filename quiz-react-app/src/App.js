@@ -6,7 +6,9 @@ import { nanoid } from "nanoid";
 
 export default function App() {
   const [quizData, setQuizData] = React.useState("");
-
+  const [isAnswerChecked, setIsAnswerChecked]= React.useState(false)
+  const [playAgain, setPlayAgain] = React.useState(false)
+  
   console.log("quizData");
   function shuffle(array){
     let currentIndex = array.length
@@ -23,7 +25,6 @@ export default function App() {
     fetch("https://opentdb.com/api.php?amount=5")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setQuizData(
           data.results.map((elem) => ({
             answers: shuffle([
@@ -44,9 +45,7 @@ export default function App() {
           }))
         );
       });
-
-    console.log(quizData);
-  }, []);
+  }, [playAgain]);
 
   // console.log(quizData[1].category)
   return (
@@ -54,7 +53,12 @@ export default function App() {
       <Routes>
         <Route path="/">
           <Route index path="home" element={<Home />} />
-          <Route path="quiz" element={<Quiz quizData={quizData} setQuizData={setQuizData} />} />
+          <Route path="quiz" element={
+          <Quiz quizData={quizData} 
+                setQuizData={setQuizData} 
+                isAnswerChecked={isAnswerChecked}
+                setIsAnswerChecked={setIsAnswerChecked}
+                setPlayAgain={setPlayAgain} />} />
         </Route>
       </Routes>
     </BrowserRouter>
