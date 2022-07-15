@@ -4,6 +4,7 @@ import Quiz from "./pages/Quiz";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { nanoid } from "nanoid";
 
+
 export default function App() {
   const [quizData, setQuizData] = React.useState("");
   const [isAnswerChecked, setIsAnswerChecked]= React.useState(false)

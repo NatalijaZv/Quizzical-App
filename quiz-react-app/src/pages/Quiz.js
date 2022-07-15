@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import { nanoid } from "nanoid";
+import he from 'he'
 
 export default function Quiz(props) {
   console.log(props.quizData, "PROPS");
@@ -76,7 +77,7 @@ export default function Quiz(props) {
     });
     return (
       <div key={nanoid()}>
-        <h3 className="quiz-question">{elem.question}</h3>
+        <h3 className="question">{he.decode(elem.question)}</h3>
         <div className="all-answers">{answersElem}</div>
         <hr />
       </div>
