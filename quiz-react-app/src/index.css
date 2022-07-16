@@ -6,19 +6,29 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color:#293264;
+  background: #D6DBF5;
 }
 h1{
   font-family: 'Karla', sans-serif;
   font-size: 32px;
 }
+h3{
+  margin-top: 0;
+}
 span{
   margin-bottom: 2em;
 }
 .container{
+  background-color: #F5F7FB;
   min-width: 400px;
   max-width: 900px;
   margin: 0 auto;
   margin-top: 2em;
+  border: 0.1rem solid lightgray;
+  border-radius: 15px;
+  padding: 3.5em;
+  padding-top: 1.5em;
+  box-shadow: 1px 1px 5px 1px #4D5B9E;
 }
 .intro{
   position: fixed;
@@ -59,6 +69,14 @@ span{
 
 /* QUIZ */
 
+
+
+.question{
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+}
+
+
 .answer{
   font-size: 12px;
   font-weight: 500;
@@ -66,16 +84,26 @@ span{
   border:1px solid #293264;
   border-radius: 15px;
   padding: 5px 25px;
-  margin: 0.8em;
   cursor: pointer;
   transition: transform ease-in 150ms;
+  margin-bottom: 0;
 }
 .answer:hover{
   transform: scale(1.05);
 }
+
 .answer-btn{
   display: flex;
   justify-content: center;
+}
+.all-answers{
+  display: flex;
+  gap:1em;
+}
+.quiz-element{
+  /* margin: 2em; */
+  border-bottom: 0.1rem solid lightgray;
+  padding: 2em 0;
 }
 
 .is-correct{
@@ -94,15 +122,6 @@ span{
 .isSelected{
   background: #D6DBF5;
 }
-.question{
-  font-family: 'Karla', sans-serif;
-  font-weight: 600;
-}
-
-.all-answers{
-  display: flex;
-  margin-bottom: 2em;
-}
 
 .btn{
   font-family: 'Inter', sans-serif;
@@ -114,6 +133,8 @@ span{
   text-decoration: none;
   border: none;
   border-radius: 12px;
+  margin-top: 3em;
+  cursor: pointer;
 }
 
 .score-display{

@@ -53,7 +53,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Route index path="home" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
           <Route path="quiz" element={
           <Quiz quizData={quizData} 
                 setQuizData={setQuizData} 

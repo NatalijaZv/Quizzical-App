@@ -76,10 +76,12 @@ export default function Quiz(props) {
       }
     });
     return (
-      <div key={nanoid()}>
+      <div>
+      <div className="quiz-element" key={nanoid()}>
         <h3 className="question">{he.decode(elem.question)}</h3>
         <div className="all-answers">{answersElem}</div>
-        <hr />
+      </div>
+      {/* <hr className="horiz-line"/> */}
       </div>
     );
   });
